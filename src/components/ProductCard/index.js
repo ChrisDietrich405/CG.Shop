@@ -1,7 +1,7 @@
 import { AiOutlineHeart, AiFillHeart } from "react-icons/ai"
 
 export default function ProductCard({product, saveFavoriteId, isFavorite, removeFavoriteId}) {
-
+                                     // parameters and props 
     function formatTitle(text) {
 		if(text.length > 60) {
 			return text.slice(0, 60)+"..."
