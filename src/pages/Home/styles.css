@@ -4,6 +4,7 @@ h2 {
 }
 
 .home-container {
+    margin-top: 12vh; 
     padding: 32px; 
     display: flex; 
     flex-direction: column; 
