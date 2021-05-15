@@ -1,6 +1,10 @@
-import { AiOutlineHeart, AiFillHeart } from "react-icons/ai"
+import { AiOutlineHeart, AiFillHeart } from "react-icons/ai";
+import {useContext} from 'react';
+import {ProductsContext} from '../../contexts/products' 
 
-export default function ProductCard({product, saveFavoriteId, isFavorite, removeFavoriteId}) {
+export default function ProductCard({product, isFavorite}) {
+
+    const { removeFavoriteId, saveFavoriteId } = useContext(ProductsContext); 
                                      // parameters and props 
     function formatTitle(text) {
 		if(text.length > 60) {
