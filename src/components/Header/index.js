@@ -1,6 +1,7 @@
 import "./styles.css"
 import { FaShoppingCart, FaSearch, FaHeart } from "react-icons/fa"
 import { CgProfile } from "react-icons/cg"; 
+import { Link } from "react-router-dom"
 import { useContext } from 'react'; 
 import { ProductsContext } from '../../contexts/products'
 
@@ -11,7 +12,9 @@ export default function Header() {
         
         <div className="header-container">
             <div className="header-logo">
-                <FaShoppingCart size={40}/>
+                <Link to="/">
+                    <FaShoppingCart size={40}/>
+                </Link>
                 <span>G.C. Shop</span>
             </div>
             <div className="search-bar">
@@ -20,8 +23,10 @@ export default function Header() {
                 
             </div>
             <div className="header-buttons">
-                <FaHeart size={25}/>
-                <span>Wishlist</span>
+                <Link to="/favorites">
+                    <FaHeart size={25}/>
+                    <span>Wishlist</span>
+                </Link>
                 <CgProfile size={25}/>
                 <span>Login</span>
                 

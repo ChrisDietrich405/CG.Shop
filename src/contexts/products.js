@@ -15,6 +15,7 @@ export default function ProductsContextProvider({ children }){
   function handleHeaderSearchInput(event){
     setHeaderSearchInput(event.target.value)
   }
+  
 
 	function saveFavoriteId(productId) {
 			 setFavoriteProductIds([...favoriteProductIds, productId]) 
