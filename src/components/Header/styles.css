@@ -7,12 +7,21 @@
     display: flex; 
     justify-content: space-between;
     align-items: center;
-    padding: 0 2rem;  
+    padding: 0 2rem; 
+    z-index: 1; 
 }
 
 .header-logo {
     display: flex;
     align-items: center; 
+}
+
+.header-logo a {
+    transition: all .2s ease-in; 
+}
+
+.header-logo a:hover {
+    transform: scale(1.2)
 }
 
 .header-logo svg {
@@ -55,5 +64,16 @@
 
 .header-buttons span {
     margin: 0 1rem 0 .4rem; 
+}
+
+.header-buttons a {
+    display: flex; 
+    align-items: center; 
+    text-decoration: none; 
+    color: inherit;       /* it inherits the value of its parent and in this case the parent is header-buttons */
+}
+
+.header-buttons svg {
+    font-size: 1.5rem; 
 }
 

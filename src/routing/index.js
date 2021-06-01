@@ -8,8 +8,7 @@ export default function Routing() {
         <div className="routing">
             <Router>
             <Header/> 
-                <Switch>
-                    
+                <Switch> 
                     <Route path="/" exact component={Home}></Route>
                     <Route path="/favorites" component={Favorites}></Route>
                 </Switch>

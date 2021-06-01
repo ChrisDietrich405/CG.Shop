@@ -7,7 +7,7 @@ import ProductsContextProvider from './contexts/products';
 function App() {
   return (
       <ProductsContextProvider>
-        <ToastContainer/>
+        <ToastContainer position="bottom-right" />
         <Routing/>
       </ProductsContextProvider>
   );

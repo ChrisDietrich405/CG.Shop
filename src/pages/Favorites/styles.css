@@ -1,0 +1,55 @@
+h2 {
+    color: var(--font); 
+    margin-bottom: 1.5rem; 
+}
+
+.home-container {
+    margin-top: 12vh; 
+    padding: 32px; 
+    display: flex; 
+    flex-direction: column; 
+    flex-wrap: wrap;
+    justify-content: space-around; 
+}
+
+.products-container {
+    display: flex; 
+    flex-direction: row; 
+    flex-wrap: wrap; 
+    justify-content: center; 
+}
+
+.product-card { 
+    background-color: white;
+    margin: 0px 20px 30px 20px;  
+    padding: 30px; 
+    width: 250px;
+    border-radius: 10px; 
+    transition: all ease .5s; 
+    cursor: pointer; 
+}
+
+.product-card:hover {
+    transform: scale(1.1)
+}
+
+.product-card img {
+    width: 100%; 
+}
+
+.product-card p {
+    margin-top: .5rem; 
+    font-size: .5rem; 
+}
+
+.product-card div span {
+    font-size: .8rem;
+    font-weight: bold;   
+}
+
+.product-card div {
+    margin-top: .3rem; 
+    display: flex; 
+    justify-content: space-between;
+    align-items: center;
+}
