@@ -1,16 +1,15 @@
-import Home from "./pages/Home"
+import Routing from "./routing"
 import "./styles/global-styles.css"
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import Header from "./components/Header"
+import ProductsContextProvider from './contexts/products'; 
 
 function App() {
   return (
-    <div className="App">
-    <Header/>
-    <ToastContainer/>
-    <Home/>
-    </div>
+      <ProductsContextProvider>
+        <ToastContainer position="bottom-right" />
+        <Routing/>
+      </ProductsContextProvider>
   );
 }
 

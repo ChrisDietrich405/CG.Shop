@@ -53,3 +53,10 @@ h2 {
     justify-content: space-between;
     align-items: center;
 }
+
+.loading {
+    display: flex; 
+    justify-content: center; 
+    margin-top: 16vh; 
+    height: 25rem; 
+}
