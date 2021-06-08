@@ -1,5 +1,3 @@
-//this is the context file 
-
 import { createContext, useEffect, useState } from 'react'; 
 import { toast } from "react-toastify";
 import axios from 'axios'; 
@@ -42,22 +40,20 @@ export default function ProductsContextProvider({ children }){
   // for example as the customer types motorolla after they type for example moto it 
   // autopopulates
 	
-	useEffect(() => { //the arrow function is a callback function
-    async function fetchProducts() {
-      try{
-      setLoading(true)
-      const response = await axios
+	useEffect(() => { 
+    setLoading(true)
+		axios
 			.get("http://localhost:5000/products")
-      setLoading(false)
-      setProducts(response.data);
-      } catch(err) {
-        console.log(err);
+			.then((response) => {
+        setLoading(false)
+				setProducts(response.data);
+			})
+			.catch((err) => { 
+				console.log(err);
 				toast.error('Some error happened :(')
         setLoading(false) //if this is not here the loading would be true forever
         //and the loading message would be there forever 
-      }
-    }
-    fetchProducts()
+			});
 	}, []); 
 
 	useEffect(() => {
@@ -65,8 +61,6 @@ export default function ProductsContextProvider({ children }){
 					toast.info('A product was saved into the favorites');
 				}
 	}, [favoriteProductIds]);
-
-
 
   return(
     <ProductsContext.Provider 
