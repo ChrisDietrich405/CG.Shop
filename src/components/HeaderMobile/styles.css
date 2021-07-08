@@ -1,0 +1,43 @@
+.mobile-container {
+    padding: 1rem; 
+    width: 100%; 
+    position: fixed; 
+    top: 0; 
+    background-color: var(--primary)
+}
+
+.mobile-menu {
+    display: flex; 
+    justify-content: space-between;
+    color: white; 
+}
+
+.mobile-menu svg:first-child {
+    color: var(--secondary)
+}
+
+.mobile-navigation {
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    margin-top: 1rem; 
+    color: white; 
+}
+
+.hidden {
+    display: none !important; 
+
+}
+
+.mobile-navigation svg {
+    font-size: 30px; 
+    margin-right: 6px; 
+}
+
+.mobile-navigation a {
+    display: flex; 
+    align-items: center; 
+    padding-right: .8rem; 
+    text-decoration: none;
+    color: white; 
+}

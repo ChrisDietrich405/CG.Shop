@@ -5,7 +5,8 @@ import App from "./App";
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <App />  
+    {/* the app component is being rendered in the root div of the index.html (inside the public folder)  */}
   </React.StrictMode>,
   document.getElementById("root")
 );

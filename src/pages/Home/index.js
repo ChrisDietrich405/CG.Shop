@@ -7,14 +7,12 @@ import LoadingImage from "../../assets/images/loading.svg"
 function Home() {
 	const { favoriteProductIds, products, loading } = useContext(ProductsContext)
 	if(loading) {
-
 		return (
 		      <div className="loading">
 				  <img src={LoadingImage} alt="Loading" />
 			  </div>
 		)
 	}
-
 
 	return (
 		<div className="home-container">

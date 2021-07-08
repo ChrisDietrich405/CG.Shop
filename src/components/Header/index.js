@@ -4,6 +4,7 @@ import { CgProfile } from "react-icons/cg";
 import { Link } from "react-router-dom"
 import { useContext } from 'react'; //useContext is a hook 
 import { ProductsContext } from '../../contexts/products'
+import SearchInput from "../SearchInput"
 //hooks can only be called inside of a component 
 //createContext and useContext work together and are necessary for each other 
 
@@ -25,19 +26,14 @@ export default function Header() {
                 </Link>
                 <span>G.C. Shop</span>
             </div>
-            <div className="search-bar">
-                <input type="text" placeholder="Search Smartphones" onChange={handleHeaderSearchInput}/>
-                <FaSearch/>
-                
-            </div>
+            <SearchInput onChange={handleHeaderSearchInput} placeholder="Search Smartphones"/>
             <div className="header-buttons">
                 <Link to="/favorites">
                     <FaHeart />
                     <span>Wishlist</span>
                 </Link>
                 <CgProfile />
-                <span>Login</span>
-                
+                <span>Login</span>  
             </div>
 
         </div>        

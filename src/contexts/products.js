@@ -3,6 +3,7 @@
 import { createContext, useEffect, useState } from 'react'; 
 import { toast } from "react-toastify";
 import axios from 'axios'; 
+import * as fakeHttp from '../helpers/fakehttp' // * means all, so we are importing everything from fakehttp and storing it into the fakehttp variable
 
 export const ProductsContext = createContext(); 
 //createContext creates a new instance of context
@@ -43,17 +44,21 @@ export default function ProductsContextProvider({ children }){
   // autopopulates
 	
 	useEffect(() => { //the arrow function is a callback function
-    async function fetchProducts() {
-      try{
-      setLoading(true)
-      const response = await axios
-			.get("http://localhost:5000/products")
-      setLoading(false)
-      setProducts(response.data);
+    async function fetchProducts() { //async is a function 
+      try{ //try is for if the response is successful
+      setLoading(true) //whether the call the is successful or not setLoading is true
+      //which means the loading page will load. setLoading is being called before 
+      //the request so that's why it works 
+      const response = await fakeHttp.getProducts()
+    
+      setProducts(response.data); //this comes from the fakeHttp
       } catch(err) {
         console.log(err);
 				toast.error('Some error happened :(')
-        setLoading(false) //if this is not here the loading would be true forever
+        
+      } finally{
+        setLoading(false)
+         //if this is not here the loading would be true forever
         //and the loading message would be there forever 
       }
     }
