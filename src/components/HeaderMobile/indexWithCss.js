@@ -39,5 +39,3 @@ export default function HeaderMobile() {
     )
 }
 
-//logical operators include ||, &&, <, >, =. logical operators return a boolean value to me 
-//with the and operator there needs to be two statements and they both need to be truthy

@@ -33,8 +33,10 @@ export default function HeaderMobile() {
                         <FaHeart />
                         <span>Wishlist</span>
                     </Link>
-                    <CgProfile />
-                    <span>Login</span>
+                    <Link to="/create-account">
+                        <CgProfile />
+                        <span>Login</span>
+                    </Link>
             </div>)}
         </div>
     )

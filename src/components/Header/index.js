@@ -5,17 +5,9 @@ import { Link } from "react-router-dom"
 import { useContext } from 'react'; //useContext is a hook 
 import { ProductsContext } from '../../contexts/products'
 import SearchInput from "../SearchInput"
-//hooks can only be called inside of a component 
-//createContext and useContext work together and are necessary for each other 
 
 export default function Header() {
     const { handleHeaderSearchInput } = useContext(ProductsContext);
-    // we are extracting the one function from Products Context
-
-    // const context =  useContext(ProductsContext);
-    // console.log(context)
-    //if we do it this way we will have all the functions, arrays, objects, etc..(all the information)
-    // from the ProductsContext
     
     return (
         
@@ -24,7 +16,7 @@ export default function Header() {
                 <Link to="/">
                     <FaShoppingCart size={40}/>
                 </Link>
-                <span>G.C. Shop</span>
+                <span>C.G. Shop</span>
             </div>
             <SearchInput onChange={handleHeaderSearchInput} placeholder="Search Smartphones"/>
             <div className="header-buttons">
@@ -32,8 +24,12 @@ export default function Header() {
                     <FaHeart />
                     <span>Wishlist</span>
                 </Link>
-                <CgProfile />
-                <span>Login</span>  
+                <Link to="/create-account">
+                    <CgProfile />
+                    <span>Login</span> 
+                </Link>
+                
+                
             </div>
 
         </div>        
