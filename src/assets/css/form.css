@@ -52,7 +52,7 @@ button {
     border-radius: 5px; 
     font-size: .7rem; 
     transition: all .4s;
-    padding: .5rem 0;
+    padding: .8rem .5rem;
 }
 
 button:hover {
