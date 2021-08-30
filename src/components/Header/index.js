@@ -24,7 +24,7 @@ export default function Header() {
                     <FaHeart />
                     <span>Wishlist</span>
                 </Link>
-                <Link to="/create-account">
+                <Link to="/sign-in">
                     <CgProfile />
                     <span>Login</span> 
                 </Link>

@@ -1,6 +1,6 @@
 import { useState } from "react"
 
-import "./styles.css"
+import "../../assets/css/form.css"
 
 export default function CreateAccount() {
 
@@ -39,10 +39,11 @@ export default function CreateAccount() {
                         <input type="text" id="email" value={email} onChange={addEmail}  />
                     </label>
                     <label htmlFor="password">
-                        Password
-                        <input type="text" placeholder="At least 6 characters" id="password" value={password} onChange={addPassword}  />
+                        Password 
+                        <input type="text" placeholder="" id="password" value={password} onChange={addPassword}  />
+                        <p className="password-minimum">(At least 6 characters)</p>
                     </label>
-                    <button type="submit">Create your C.G.Shop account</button>
+                    <button type="submit" className="btn">Create your C.G.Shop account</button> 
                 </form>
             
         </div>
