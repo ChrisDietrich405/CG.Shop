@@ -14,7 +14,7 @@ export default function Header() {
         <div className="header-container">
             <div className="header-logo">
                 <Link to="/">
-                    <FaShoppingCart size={40}/>
+                    <FaShoppingCart size={40} style={{color: "white"}}/>
                 </Link>
                 <span>C.G. Shop</span>
             </div>

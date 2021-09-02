@@ -3,9 +3,8 @@ import { useContext } from 'react';
 import { ProductsContext } from '../../contexts/products' 
 
 export default function ProductCard({product, isFavorite}) {
-// PRODUCT AND ISFAVORITE ARE PROPS FROM THE HOME 
     const { removeFavoriteId, saveFavoriteId } = useContext(ProductsContext); 
-            //removeFavoriteId and saveFavoriteId are variables and functions 
+           
     function formatTitle(text) {
 		if(text.length > 60) {
 			return text.slice(0, 60)+"..."
