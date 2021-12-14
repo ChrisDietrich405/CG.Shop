@@ -49,7 +49,7 @@
     display: flex; 
     align-items: center; 
     text-decoration: none; 
-    color: inherit;       /* it inherits the value of its parent and in this case the parent is header-buttons */
+    color: inherit;       
 }
 
 .header-buttons svg {

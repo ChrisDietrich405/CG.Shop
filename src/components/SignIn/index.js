@@ -6,11 +6,11 @@ import "../../assets/css/form.css"
 
 export default function SignIn() {
 
-    const [name, setName] = useState("")
+    const [email, setEmail] = useState("")
     const [password, setPassword] = useState("")
 
-    const addName = (e) => {
-        setName(e.target.value)
+    const addEmail = (e) => {
+        setEmail(e.target.value)
     }
 
     const addPassword = (e) => {
@@ -26,20 +26,18 @@ export default function SignIn() {
             <h2>C.G.Shop</h2>
                 <form onSubmit={submit}>
                     <h3>Sign In</h3>
-                    <label htmlFor="name">
-                        Name
-                        <input type="text" id="name" value={name} onChange={addName}  />
+                    <label htmlFor="email">
+                        Email or Phone Number
+                        <input type="text" id="name" value={email} onChange={addEmail}  />
                     </label>
                     <label htmlFor="password">
-                        Password 
+                        <div className="password-container">
+                            <span className="password">Password</span><span className="forgot-password">Forgot Password?</span> 
+                        </div>
+                        
                         <input type="text" placeholder="" id="password" value={password} onChange={addPassword}  />
                         <p className="password-minimum">(At least 6 characters)</p>
                     </label>
-                    <p>New to C.G.Shop?</p>
-                    <Link to="/create-account">
-                    <button type="submit" className="btn">Create your C.G.Shop account</button>
-                    
-                    </Link>
                    
                 </form>
             

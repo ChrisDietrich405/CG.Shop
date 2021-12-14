@@ -47,6 +47,7 @@ input:hover {
 }
 
 button {
+    background-color: var(--primary);
     margin-bottom: 5rem; 
     width: 100%; 
     border-radius: 5px; 
@@ -71,4 +72,20 @@ span {
 
 .password-minimum { 
     font-size: .7rem; 
+}
+
+.password-container {
+    display: flex; 
+}
+
+.password, .forgot-password {
+    font-size: 13px; 
+}
+
+.password {
+    margin-right: 2rem; 
+}
+
+.forgot-password {
+    margin-left: 2rem; 
 }
