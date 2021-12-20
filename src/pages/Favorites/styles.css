@@ -4,3 +4,9 @@
   margin-top: 16vh;
   height: 25rem;
 }
+
+.favorites {
+  display: flex;
+  flex-direction: column;
+  margin-top: 150px;
+}
