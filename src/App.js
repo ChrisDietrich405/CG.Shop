@@ -1,5 +1,9 @@
-//increase the size of the search input
-//wishlist page items are cut off
+//RESPONSIVITY
+// in cell view make cards wider on home page
+// add Create account to hamburger menu
+// get rid of the hamburger menu add the search bar to the bottom and make it bigger
+//and put the three links at the top
+//add top margin to the title on home page
 
 import Routing from "./routing";
 import "./styles/global-styles.css";

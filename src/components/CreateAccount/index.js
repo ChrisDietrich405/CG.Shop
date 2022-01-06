@@ -25,9 +25,9 @@ export default function CreateAccount() {
 
   return (
     <div className="form-container">
-      <h2>C.G.Shop</h2>
+      <h1>C.G.Shop</h1>
       <form onSubmit={submit}>
-        <h3>Create account</h3>
+        <h3 className="create-account">Create account</h3>
         <label htmlFor="name">
           Name
           <input type="text" id="name" value={name} onChange={addName} />

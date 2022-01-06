@@ -22,9 +22,9 @@ export default function SignIn() {
 
   return (
     <div className="form-container">
-      <h2>C.G.Shop</h2>
+      <h1>C.G.Shop</h1>
       <form onSubmit={submit}>
-        <h3>Sign In</h3>
+        <h3 className="signin">Sign In</h3>
         <label htmlFor="email">
           <p className="email">Email or Phone Number</p>
           <input type="text" id="name" value={email} onChange={addEmail} />
