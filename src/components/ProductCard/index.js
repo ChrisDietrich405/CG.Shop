@@ -36,9 +36,6 @@ export default function ProductCard({ product, isFavorite }) {
             onClick={() => saveFavoriteId(product.id)}
           />
         )}
-        {/* isFavorite is a variable passed as a prop here */}
-        {/* removeFavoriteId and saveFavoriteId need to be part of state management because they manipulate, update 
-            states in other functions */}
       </div>
     </div>
   );

@@ -34,11 +34,11 @@ export default function HeaderMobile() {
             <FaHeart />
             <span>Wishlist</span>
           </Link>
-          <Link to="/create-account">
+          <Link to="/signin">
             <CgProfile />
             <span>Login</span>
           </Link>
-          <Link to="/signin">
+          <Link to="/create-account">
             <CgProfile />
             <span>Create Account</span>
           </Link>
