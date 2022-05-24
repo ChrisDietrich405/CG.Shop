@@ -1,10 +1,10 @@
-import axios from "axios";
-import { useState, useContext } from "react";
+import { useContext } from "react";
 
 import { ProductsContext } from "../../contexts/products";
 import ProductCard from "../../components/ProductCard";
 
 import "./styles.css";
+
 import wishlistImage from "../../assets/images/wishlist.svg";
 
 export default function WishList() {

@@ -10,3 +10,9 @@
   flex-direction: column;
   margin-top: 150px;
 }
+
+@media only screen and (max-width: 600px) {
+  .emptyListContainer {
+    margin-top: 100px;
+  }
+}

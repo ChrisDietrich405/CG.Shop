@@ -1,7 +1,8 @@
-import "./styles.css";
 import { FaShoppingCart, FaSearch, FaHeart } from "react-icons/fa";
 import { CgProfile, CgMenu } from "react-icons/cg";
 import { Link } from "react-router-dom";
+
+import "./styles.css";
 
 export default function HeaderMobile() {
   const toggleBtns = () => {

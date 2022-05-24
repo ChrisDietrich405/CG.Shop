@@ -1,17 +1,12 @@
-//RESPONSIVITY
-// in cell view make cards wider on home page
-// add Create account to hamburger menu
-// get rid of the hamburger menu add the search bar to the bottom and make it bigger
-//and put the three links at the top
-//add top margin to the title on home page
-
-import Routing from "./routing";
-import "./styles/global-styles.css";
+import { Helmet } from "react-helmet";
 import { ToastContainer } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
+
 import ProductsContextProvider from "./contexts/products";
 import DimensionProvider from "./contexts/dimensions";
-import { Helmet } from "react-helmet";
+import Routing from "./routing";
+
+import "react-toastify/dist/ReactToastify.css";
+import "./styles/global-styles.css";
 
 function App() {
   return (

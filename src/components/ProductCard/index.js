@@ -1,5 +1,6 @@
 import { AiOutlineHeart, AiFillHeart } from "react-icons/ai";
 import { useContext } from "react";
+
 import { ProductsContext } from "../../contexts/products";
 
 export default function ProductCard({ product, isFavorite }) {

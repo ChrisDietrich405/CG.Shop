@@ -1,7 +1,10 @@
-import { useEffect, useState, useContext } from "react";
+import { useContext } from "react";
+
 import { ProductsContext } from "../../contexts/products";
-import "./styles.css";
 import ProductCard from "../../components/ProductCard";
+
+import "./styles.css";
+
 import LoadingImage from "../../assets/images/loading.svg";
 
 function Home() {
