@@ -9,6 +9,7 @@ import wishlistImage from "../../assets/images/wishlist.svg";
 
 export default function WishList() {
   const { favoriteProductIds, products } = useContext(ProductsContext);
+  
   const favoriteProducts = products.filter((product) => {
     return favoriteProductIds.includes(product.id);
   });

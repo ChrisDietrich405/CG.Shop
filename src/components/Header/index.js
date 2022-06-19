@@ -1,4 +1,3 @@
-import "./styles.css";
 import { FaShoppingCart, FaSearch, FaHeart } from "react-icons/fa";
 import { CgProfile } from "react-icons/cg";
 import { IoCreateOutline } from "react-icons/io5";
@@ -7,6 +6,8 @@ import { useContext } from "react";
 
 import { ProductsContext } from "../../contexts/products";
 import SearchInput from "../SearchInput";
+
+import "./styles.css";
 
 export default function Header() {
   const { handleHeaderSearchInput } = useContext(ProductsContext);

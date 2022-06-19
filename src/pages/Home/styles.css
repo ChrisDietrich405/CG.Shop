@@ -62,7 +62,17 @@
   height: 25rem;
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 880px) {
+  .home-title {
+    margin-top: 150px;
+  }
+
+  .product-card {
+    width: 350px;
+  }
+}
+
+@media only screen and (max-width: 480px) {
   .home-title {
     margin-top: 100px;
   }

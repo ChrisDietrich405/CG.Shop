@@ -17,7 +17,7 @@ const DimensionProvider = ({ children }) => {
       window.removeEventListener("resize");
     };
   }, []);
-  console.log(dimensions);
+  
   return (
     <DimensionContext.Provider
       value={{

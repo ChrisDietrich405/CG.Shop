@@ -11,7 +11,13 @@
   margin-top: 150px;
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 880px) {
+  .emptyListContainer {
+    margin-top: 150px;
+  }
+}
+
+@media only screen and (max-width: 480px) {
   .emptyListContainer {
     margin-top: 100px;
   }
