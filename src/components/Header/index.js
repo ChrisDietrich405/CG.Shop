@@ -1,4 +1,4 @@
-import { FaShoppingCart, FaSearch, FaHeart } from "react-icons/fa";
+import { FaShoppingCart, FaHeart } from "react-icons/fa";
 import { CgProfile } from "react-icons/cg";
 import { IoCreateOutline } from "react-icons/io5";
 import { Link } from "react-router-dom";

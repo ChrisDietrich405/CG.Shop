@@ -30,7 +30,7 @@ export default function ProductsContextProvider({ children }) {
       product.title.toUpperCase().includes(headerSearchInput.toUpperCase())
     );
     setProductsFiltered(foundProducts);
-  }, [headerSearchInput]);
+  }, [products, headerSearchInput]);
 
   useEffect(() => {
     async function fetchProducts() {

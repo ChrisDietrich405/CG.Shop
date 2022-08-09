@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { FaShoppingCart, FaSearch, FaHeart } from "react-icons/fa";
+import { FaShoppingCart, FaHeart } from "react-icons/fa";
 import { CgProfile, CgMenu } from "react-icons/cg";
 import { Link } from "react-router-dom";
 import { useContext } from "react";
