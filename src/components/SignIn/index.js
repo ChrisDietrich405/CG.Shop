@@ -22,7 +22,7 @@ export default function SignIn() {
     <div className="form-container">
       <h1>C.G.Shop</h1>
       <form onSubmit={submit}>
-        <h3 className="signin">Sign In</h3>
+        <h3 className="signin">Log In</h3>
         <label htmlFor="email">
           <p className="email">Email or Phone Number</p>
           <input type="text" id="name" value={email} onChange={addEmail} />
@@ -42,6 +42,9 @@ export default function SignIn() {
           />
           <p className="password-minimum">(At least 6 characters)</p>
         </label>
+        <button type="submit" className="create-account-sign-in-btn">
+          Log In
+        </button>
       </form>
     </div>
   );

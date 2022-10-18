@@ -47,7 +47,7 @@ export default function CreateAccount() {
           />
           <p className="password-minimum">(At least 6 characters)</p>
         </label>
-        <button type="submit" className="create-account-btn">
+        <button type="submit" className="create-account-sign-in-btn">
           Create an account
         </button>
       </form>
