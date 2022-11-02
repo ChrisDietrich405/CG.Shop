@@ -8,8 +8,9 @@ import "./styles.css";
 import wishlistImage from "../../assets/images/wishlist.svg";
 
 export default function WishList() {
-  const { favoriteProductIds, products } = useContext<IProductsContext>(ProductsContext);
-  
+  const { favoriteProductIds, products } =
+    useContext<IProductsContext>(ProductsContext);
+
   const favoriteProducts = products.filter((product) => {
     return favoriteProductIds.includes(product.id);
   });
@@ -22,9 +23,9 @@ export default function WishList() {
   }
 
   return (
-    <div className="home-container">
+    <div className="favorites-container">
+      <h1 className="favorites-title">Favorites</h1>
       <div className="products-container favorites">
-        <h1>Favorites</h1>
         {favoriteProducts.map((product) => (
           <ProductCard product={product} isFavorite={true} />
         ))}
