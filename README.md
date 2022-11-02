@@ -1,7 +1,7 @@
 # c.g.shop
 
 This app is an online cel phone store. 
-This project includes bootstrap and also the useContext React Hook
+This project includes Bootstrap, TypeScript, the useContext React Hook
 
 ## How To Run This Project
 
