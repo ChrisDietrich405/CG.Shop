@@ -4,13 +4,14 @@ import { IoCreateOutline } from "react-icons/io5";
 import { Link } from "react-router-dom";
 import { useContext } from "react";
 
-import { ProductsContext } from "../../contexts/products";
+import { ProductsContext, IProductsContext } from "../../contexts/products";
 import SearchInput from "../SearchInput";
+
 
 import "./styles.css";
 
 export default function Header() {
-  const { handleHeaderSearchInput } = useContext(ProductsContext);
+  const { handleHeaderSearchInput } = useContext<IProductsContext>(ProductsContext);
 
   return (
     <div className="header-container">
