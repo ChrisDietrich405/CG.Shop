@@ -1,19 +1,26 @@
 import { AiOutlineHeart, AiFillHeart } from "react-icons/ai";
 import { useContext } from "react";
 
-import { ProductsContext } from "../../contexts/products";
+import { IProduct } from "../../models/product";
+import { IProductsContext, ProductsContext } from "../../contexts/products";
 
-export default function ProductCard({ product, isFavorite }) {
-  const { removeFavoriteId, saveFavoriteId } = useContext(ProductsContext);
+interface ProductCardProps {
+  product: IProduct,
+  isFavorite: boolean
+}
 
-  function formatTitle(text) {
+export default function ProductCard({ product, isFavorite } : ProductCardProps) {
+  const { removeFavoriteId, saveFavoriteId } =
+    useContext<IProductsContext>(ProductsContext);
+
+  function formatTitle(text: string): string {
     if (text.length > 60) {
       return text.slice(0, 60) + "...";
     }
     return text;
   }
 
-  function formatPrice(price) {
+  function formatPrice(price: number) : string {
     return new Intl.NumberFormat("en-US", {
       style: "currency",
       currency: "USD",

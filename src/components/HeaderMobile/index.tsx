@@ -10,7 +10,6 @@ import SearchInput from "../SearchInput";
 import "./styles.css";
 
 export default function HeaderMobile() {
-  const { handleHeaderSearchInput } = useContext<IProductsContext>(ProductsContext);
   const [isBtnVisible, setIsBtnVisible] = useState<boolean>(false);
 
   const toggleBtns = () => {
@@ -23,7 +22,7 @@ export default function HeaderMobile() {
         <Link to="/">
           <FaShoppingCart size={40} />
         </Link>
-        <SearchInput onChange={handleHeaderSearchInput} placeholder="Search" />
+        <SearchInput placeholder="Search" />
         <CgMenu onClick={toggleBtns} size={40} />
       </div>
 

@@ -3,18 +3,10 @@ import { useState } from "react";
 import "../../assets/css/form.css";
 
 export default function SignIn() {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+  const [email, setEmail] = useState<string>("");
+  const [password, setPassword] = useState<string>("");
 
-  const addEmail = (e) => {
-    setEmail(e.target.value);
-  };
-
-  const addPassword = (e) => {
-    setPassword(e.target.value);
-  };
-
-  const submit = (e) => {
+  const submit = (e: React.ChangeEvent<HTMLFormElement>) => {
     e.preventDefault();
   };
 
@@ -25,7 +17,7 @@ export default function SignIn() {
         <h3 className="signin">Log In</h3>
         <label htmlFor="email">
           <p className="email">Email or Phone Number</p>
-          <input type="text" id="name" value={email} onChange={addEmail} />
+          <input type="text" id="name" value={email} onChange={(e) => setEmail(e.target.value)} />
         </label>
         <label htmlFor="password">
           <div className="password-container">
@@ -38,7 +30,7 @@ export default function SignIn() {
             placeholder=""
             id="password"
             value={password}
-            onChange={addPassword}
+            onChange={(e) => setPassword(e.target.value)}
           />
           <p className="password-minimum">(At least 6 characters)</p>
         </label>

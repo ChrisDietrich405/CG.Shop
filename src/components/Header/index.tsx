@@ -7,11 +7,9 @@ import { useContext } from "react";
 import { ProductsContext, IProductsContext } from "../../contexts/products";
 import SearchInput from "../SearchInput";
 
-
 import "./styles.css";
 
 export default function Header() {
-  const { handleHeaderSearchInput } = useContext<IProductsContext>(ProductsContext);
 
   return (
     <div className="header-container">
@@ -22,7 +20,6 @@ export default function Header() {
         <span>C.G. Shop</span>
       </div>
       <SearchInput
-        onChange={handleHeaderSearchInput}
         placeholder="Search Smartphones"
       />
       <div className="header-buttons">

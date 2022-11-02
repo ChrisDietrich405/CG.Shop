@@ -2,13 +2,15 @@ import { useContext } from "react";
 
 import { ProductsContext } from "../../contexts/products";
 import ProductCard from "../../components/ProductCard";
+import { IProductsContext } from "../../contexts/products";
+
 
 import "./styles.css";
 
 import LoadingImage from "../../assets/images/loading.svg";
 
 function Home() {
-  const { favoriteProductIds, products, loading } = useContext(ProductsContext);
+  const { favoriteProductIds, products, loading } = useContext<IProductsContext>(ProductsContext);
   if (loading) {
     return (
       <div className="loading">

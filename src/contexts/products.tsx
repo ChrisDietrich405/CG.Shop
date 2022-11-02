@@ -2,7 +2,7 @@ import React, { createContext, useEffect, useState, ReactNode } from "react";
 import { toast } from "react-toastify";
 
 import * as fakeHttp from "../helpers/fakehttp";
-import { IProduct } from "../models/product"
+import { IProduct } from "../models/product";
 
 export interface IProductsContext {
   products: IProduct[];
@@ -10,16 +10,20 @@ export interface IProductsContext {
   saveFavoriteId: (productId: number) => void;
   removeFavoriteId: (productId: number) => void;
   handleHeaderSearchInput: (e: React.ChangeEvent<HTMLInputElement>) => void;
-  loading: boolean; 
+  loading: boolean;
 }
 
 interface IProductsContextProvider {
-  children: JSX.Element
+  children: JSX.Element;
 }
 
-export const ProductsContext = createContext<IProductsContext>({} as IProductsContext);
+export const ProductsContext = createContext<IProductsContext>(
+  {} as IProductsContext
+);
 
-export default function ProductsContextProvider ({ children } : IProductsContextProvider) {
+export default function ProductsContextProvider({
+  children,
+}: IProductsContextProvider) {
   const [products, setProducts] = useState<IProduct[]>([]);
   const [productsFiltered, setProductsFiltered] = useState<IProduct[]>([]);
   const [favoriteProductIds, setFavoriteProductIds] = useState<number[]>([]);
@@ -27,7 +31,7 @@ export default function ProductsContextProvider ({ children } : IProductsContext
   const [loading, setLoading] = useState<boolean>(false);
 
   function handleHeaderSearchInput(event: React.ChangeEvent<HTMLInputElement>) {
-    console.log(event)
+    console.log(event);
     setHeaderSearchInput(event.target.value);
   }
 
@@ -85,7 +89,3 @@ export default function ProductsContextProvider ({ children } : IProductsContext
     </ProductsContext.Provider>
   );
 }
-
-
-
-

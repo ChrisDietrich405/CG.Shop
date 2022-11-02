@@ -1,6 +1,6 @@
 import { useContext } from "react";
 
-import { ProductsContext } from "../../contexts/products";
+import { ProductsContext, IProductsContext } from "../../contexts/products";
 import ProductCard from "../../components/ProductCard";
 
 import "./styles.css";
@@ -8,7 +8,7 @@ import "./styles.css";
 import wishlistImage from "../../assets/images/wishlist.svg";
 
 export default function WishList() {
-  const { favoriteProductIds, products } = useContext(ProductsContext);
+  const { favoriteProductIds, products } = useContext<IProductsContext>(ProductsContext);
   
   const favoriteProducts = products.filter((product) => {
     return favoriteProductIds.includes(product.id);
