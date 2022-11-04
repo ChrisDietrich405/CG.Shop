@@ -2,8 +2,19 @@
     "users": [
         {
             "id": 1,
+            "name": "chris dietrich",
+            "phone": "33333333",
             "email": "chris@gmail.com",
-            "password": "password"
+            "password": "password",
+            "image": "chris.png"
+        },
+        {
+            "id":2,
+            "name": "marcelo santos",
+            "phone": "444444444433",
+            "email": "marcelo@gmail.com",
+            "password": "anotherpassword",
+            "image": "marcelo.jpg"
         }
     ]
 }

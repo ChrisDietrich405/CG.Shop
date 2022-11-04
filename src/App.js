@@ -3,6 +3,7 @@ import { ToastContainer } from "react-toastify";
 
 import ProductsContextProvider from "./contexts/products";
 import DimensionProvider from "./contexts/dimensions";
+import { UserProvider } from "./contexts/users";
 import Routing from "./routing";
 
 import "react-toastify/dist/ReactToastify.css";
@@ -19,8 +20,10 @@ function App() {
       </Helmet>
       <DimensionProvider>
         <ProductsContextProvider>
-          <ToastContainer position="bottom-right" />
-          <Routing />
+          <UserProvider>
+            <ToastContainer position="bottom-right" />
+            <Routing />
+          </UserProvider>
         </ProductsContextProvider>
       </DimensionProvider>
     </div>
