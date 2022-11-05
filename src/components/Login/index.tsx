@@ -2,9 +2,9 @@ import { useState, useContext } from "react";
 import { UserContext, IUserContext } from "../../contexts/users";
 import "../../assets/css/form.css";
 
-import "./styles.css"
+import "./styles.css";
 
-export default function SignIn() {
+export default function Login() {
   const { user, isAuthenticated, handleLogin, handleLogout } =
     useContext<IUserContext>(UserContext);
 
@@ -22,11 +22,20 @@ export default function SignIn() {
         <>
           <h1>Welcome {user.name} to C.G.Shop!</h1>
           <div className="profile-container">
-            <img src={user.image} alt="" />
+            <img src={user.image} alt="profile" />
             <div>
-              <p><strong>Name:</strong>{user.name}</p>
-              <p><strong>Email:</strong>{user.email}</p>
-              <p><strong>Telephone:</strong>{user.phone}</p>
+              <p>
+                <strong>Name:</strong>
+                {user.name}
+              </p>
+              <p>
+                <strong>Email:</strong>
+                {user.email}
+              </p>
+              <p>
+                <strong>Telephone:</strong>
+                {user.phone}
+              </p>
             </div>
           </div>
           <div style={{ width: "200px", margin: "0 auto" }}>

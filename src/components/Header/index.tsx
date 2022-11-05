@@ -10,7 +10,6 @@ import SearchInput from "../SearchInput";
 import "./styles.css";
 
 export default function Header() {
-
   return (
     <div className="header-container">
       <div className="header-logo">
@@ -19,15 +18,13 @@ export default function Header() {
         </Link>
         <span>C.G. Shop</span>
       </div>
-      <SearchInput
-        placeholder="Search Smartphones"
-      />
+      <SearchInput placeholder="Search Smartphones" />
       <div className="header-buttons">
         <Link to="/favorites">
           <FaHeart />
           <span>Wishlist</span>
         </Link>
-        <Link to="/sign-in">
+        <Link to="/login">
           <CgProfile />
           <span>Login</span>
         </Link>
