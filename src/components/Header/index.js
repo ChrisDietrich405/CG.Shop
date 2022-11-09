@@ -14,6 +14,7 @@ export default function Header() {
 
   return (
     <div className="header-container">
+
       <div className="header-logo">
         <Link to="/">
           <FaShoppingCart size={40} style={{ color: "white" }} />
@@ -29,7 +30,7 @@ export default function Header() {
           <FaHeart />
           <span>Wishlist</span>
         </Link>
-        <Link to="/sign-in">
+        <Link to="/login">
           <CgProfile />
           <span>Login</span>
         </Link>

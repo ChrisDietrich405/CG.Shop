@@ -33,7 +33,7 @@ export default function HeaderMobile() {
             <FaHeart />
             <span>Wishlist</span>
           </Link>
-          <Link to="/signin">
+          <Link to="/login">
             <CgProfile />
             <span>Login</span>
           </Link>
