@@ -4,14 +4,13 @@ import { CgProfile, CgMenu } from "react-icons/cg";
 import { Link } from "react-router-dom";
 import { useContext } from "react";
 
-import { ProductsContext } from "../../contexts/products";
+import { ProductsContext, IProductsContext } from "../../contexts/products";
 import SearchInput from "../SearchInput";
 
 import "./styles.css";
 
 export default function HeaderMobile() {
-  const { handleHeaderSearchInput } = useContext(ProductsContext);
-  const [isBtnVisible, setIsBtnVisible] = useState(false);
+  const [isBtnVisible, setIsBtnVisible] = useState<boolean>(false);
 
   const toggleBtns = () => {
     setIsBtnVisible(!isBtnVisible);
@@ -23,7 +22,7 @@ export default function HeaderMobile() {
         <Link to="/">
           <FaShoppingCart size={40} />
         </Link>
-        <SearchInput onChange={handleHeaderSearchInput} placeholder="Search" />
+        <SearchInput placeholder="Search" />
         <CgMenu onClick={toggleBtns} size={40} />
       </div>
 

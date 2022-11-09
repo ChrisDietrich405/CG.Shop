@@ -3,23 +3,23 @@ import { useState } from "react";
 import "../../assets/css/form.css";
 
 export default function CreateAccount() {
-  const [name, setName] = useState("");
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+  const [name, setName] = useState<string>("");
+  const [email, setEmail] = useState<string>("");
+  const [password, setPassword] = useState<string>("");
 
-  const addName = (e) => {
+  const addName = (e: React.ChangeEvent<HTMLInputElement>) => {
     setName(e.target.value);
   };
 
-  const addEmail = (e) => {
+  const addEmail = (e: React.ChangeEvent<HTMLInputElement>) => {
     setEmail(e.target.value);
   };
 
-  const addPassword = (e) => {
+  const addPassword = (e: React.ChangeEvent<HTMLInputElement>) => {
     setPassword(e.target.value);
   };
 
-  const submit = (e) => {
+  const submit = (e: React.ChangeEvent<HTMLFormElement>) => {
     e.preventDefault();
   };
 

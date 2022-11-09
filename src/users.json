@@ -1,0 +1,20 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "name": "Chris Dietrich",
+      "phone": "1 410 333 4444",
+      "email": "chris@gmail.com",
+      "password": "password",
+      "image": "chris.png"
+    },
+    {
+      "id": 2,
+      "name": "Marcelo Santos",
+      "phone": "1 443 312 5666",
+      "email": "marcelo@gmail.com",
+      "password": "anotherpassword",
+      "image": "marcelo.jpg"
+    }
+  ]
+}

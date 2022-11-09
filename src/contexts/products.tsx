@@ -1,26 +1,45 @@
-import { createContext, useEffect, useState } from "react";
+import React, { createContext, useEffect, useState, ReactNode } from "react";
 import { toast } from "react-toastify";
 
 import * as fakeHttp from "../helpers/fakehttp";
+import { IProduct } from "../models/product";
 
-export const ProductsContext = createContext();
+export interface IProductsContext {
+  products: IProduct[];
+  favoriteProductIds: number[];
+  saveFavoriteId: (productId: number) => void;
+  removeFavoriteId: (productId: number) => void;
+  handleHeaderSearchInput: (e: React.ChangeEvent<HTMLInputElement>) => void;
+  loading: boolean;
+}
 
-export default function ProductsContextProvider({ children }) {
-  const [products, setProducts] = useState([]);
-  const [productsFiltered, setProductsFiltered] = useState([]);
-  const [favoriteProductIds, setFavoriteProductIds] = useState([]);
-  const [headerSearchInput, setHeaderSearchInput] = useState("");
-  const [loading, setLoading] = useState(false);
+interface IProductsContextProvider {
+  children: JSX.Element;
+}
 
-  function handleHeaderSearchInput(event) {
+export const ProductsContext = createContext<IProductsContext>(
+  {} as IProductsContext
+);
+
+export default function ProductsContextProvider({
+  children,
+}: IProductsContextProvider) {
+  const [products, setProducts] = useState<IProduct[]>([]);
+  const [productsFiltered, setProductsFiltered] = useState<IProduct[]>([]);
+  const [favoriteProductIds, setFavoriteProductIds] = useState<number[]>([]);
+  const [headerSearchInput, setHeaderSearchInput] = useState<string>("");
+  const [loading, setLoading] = useState<boolean>(false);
+
+  function handleHeaderSearchInput(event: React.ChangeEvent<HTMLInputElement>) {
+    console.log(event);
     setHeaderSearchInput(event.target.value);
   }
 
-  function saveFavoriteId(productId) {
+  function saveFavoriteId(productId: number) {
     setFavoriteProductIds([...favoriteProductIds, productId]);
   }
 
-  function removeFavoriteId(productId) {
+  function removeFavoriteId(productId: number) {
     const newArray = favoriteProductIds.filter((favId) => favId !== productId);
     setFavoriteProductIds(newArray);
   }

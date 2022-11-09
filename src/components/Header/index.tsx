@@ -4,14 +4,12 @@ import { IoCreateOutline } from "react-icons/io5";
 import { Link } from "react-router-dom";
 import { useContext } from "react";
 
-import { ProductsContext } from "../../contexts/products";
+import { ProductsContext, IProductsContext } from "../../contexts/products";
 import SearchInput from "../SearchInput";
 
 import "./styles.css";
 
 export default function Header() {
-  const { handleHeaderSearchInput } = useContext(ProductsContext);
-
   return (
     <div className="header-container">
 
@@ -21,10 +19,7 @@ export default function Header() {
         </Link>
         <span>C.G. Shop</span>
       </div>
-      <SearchInput
-        onChange={handleHeaderSearchInput}
-        placeholder="Search Smartphones"
-      />
+      <SearchInput placeholder="Search Smartphones" />
       <div className="header-buttons">
         <Link to="/favorites">
           <FaHeart />
