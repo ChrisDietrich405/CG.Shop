@@ -5,11 +5,15 @@ import { Link } from "react-router-dom";
 import { useContext } from "react";
 
 import { ProductsContext, IProductsContext } from "../../contexts/products";
+import { UserContext, IUserContext } from "../../contexts/users";
+
 import SearchInput from "../SearchInput";
 
 import "./styles.css";
 
 export default function Header() {
+  const { user, isAuthenticated } = useContext<IUserContext>(UserContext);
+
   return (
     <div className="header-container">
       <div className="header-logo">
@@ -24,14 +28,18 @@ export default function Header() {
           <FaHeart />
           <span>Wishlist</span>
         </Link>
+
         <Link to="/login">
           <CgProfile />
-          <span>Login</span>
+          <span>{isAuthenticated ? user.name : "Log In"}</span>
         </Link>
-        <Link to="/create-account">
-          <IoCreateOutline />
-          <span>Create Account</span>
-        </Link>
+
+        {!isAuthenticated && (
+          <Link to="/create-account">
+            <IoCreateOutline />
+            <span>Create Account</span>
+          </Link>
+        )}
       </div>
     </div>
   );

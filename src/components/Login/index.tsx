@@ -1,23 +1,30 @@
 import { useState, useContext } from "react";
 import { UserContext, IUserContext } from "../../contexts/users";
+import { ProductsContext, IProductsContext } from "../../contexts/products";
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css'
+
 import "../../assets/css/form.css";
 
 import "./styles.css";
 
 export default function Login() {
-  const { user, isAuthenticated, handleLogin, handleLogout } =
+  const { user, isAuthenticated, handleLogin, handleLogout, loading } =
     useContext<IUserContext>(UserContext);
 
-  const [email, setEmail] = useState<string>("");
+  const [username, setUsername] = useState<string>("");
   const [password, setPassword] = useState<string>("");
 
   const handleSubmit = (e: React.ChangeEvent<HTMLFormElement>) => {
     e.preventDefault();
-    handleLogin(email, password);
+    handleLogin(username, password);
+    setUsername("")
+    setPassword("")
   };
 
   return (
     <div className="form-container">
+      <ToastContainer/>
       {isAuthenticated ? (
         <>
           <h1>Welcome {user.name} to C.G.Shop!</h1>
@@ -52,13 +59,14 @@ export default function Login() {
           <h1>C.G.Shop</h1>
           <form onSubmit={handleSubmit}>
             <h3 className="signin">Log In</h3>
-            <label htmlFor="email">
-              <p className="email">Email or Phone Number</p>
+            <label htmlFor="username">
+              <p className="username">Email or Phone Number</p>
               <input
+                disabled={loading}
                 type="text"
-                id="name"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
+                id="username"
+                value={username}
+                onChange={(e) => setUsername(e.target.value)}
               />
             </label>
             <label htmlFor="password">
@@ -68,6 +76,7 @@ export default function Login() {
               </div>
 
               <input
+                disabled={loading}
                 type="text"
                 placeholder=""
                 id="password"
@@ -76,8 +85,8 @@ export default function Login() {
               />
               <p className="password-minimum">(At least 6 characters)</p>
             </label>
-            <button type="submit" className="create-account-sign-in-btn">
-              Log In
+            <button disabled={loading} type="submit" className="create-account-sign-in-btn">
+              {loading ? "Page Loading" : "Log In"}
             </button>
           </form>
         </>

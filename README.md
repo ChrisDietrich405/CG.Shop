@@ -1,6 +1,6 @@
 # c.g.shop
 
-This app is an online cel phone store. 
+This app is an online cell phone store. 
 This project includes Bootstrap, TypeScript, the useContext React Hook
 
 ## How To Run This Project
@@ -8,6 +8,8 @@ This project includes Bootstrap, TypeScript, the useContext React Hook
 1. Clone project (in terminal add `git clone https://github.com/ChrisDietrich405/GC.Shop`)
 2. Install dependencies (in terminal run `npm install`)
 3. Run project (in terminal run `npm start`)
+4. In order to run the fake backend server, run the command `npm run users-server` on a second terminal
+5. In order to log in use the information from the `users.json` file which is inside the `src` folder
 
 
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.

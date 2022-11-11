@@ -1,26 +1,37 @@
 import { useState } from "react";
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+
+import { api } from "../../services/api";
 
 import "../../assets/css/form.css";
+import { isJSDocNameReference } from "typescript";
 
 export default function CreateAccount() {
   const [name, setName] = useState<string>("");
   const [email, setEmail] = useState<string>("");
   const [password, setPassword] = useState<string>("");
+  const [phone, setPhone] = useState<string>("");
+  const [image, setImage] = useState<string>("");
 
-  const addName = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setName(e.target.value);
-  };
-
-  const addEmail = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setEmail(e.target.value);
-  };
-
-  const addPassword = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setPassword(e.target.value);
-  };
-
-  const submit = (e: React.ChangeEvent<HTMLFormElement>) => {
-    e.preventDefault();
+  const submit = async (e: React.ChangeEvent<HTMLFormElement>) => {
+    try {
+      e.preventDefault();
+      if (password.length < 6) {
+        return toast.error("Password needs to be at least 6 characters");
+      }
+      const newUser = {
+        name,
+        phone,
+        email,
+        password,
+        image,
+      };
+      await api.post("/uers", newUser);
+      toast.success("You're now added");
+    } catch (err) {
+      toast.error("Error while creating new user. Try again later");
+    }
   };
 
   return (
@@ -30,11 +41,39 @@ export default function CreateAccount() {
         <h3 className="create-account">Create account</h3>
         <label htmlFor="name">
           Name
-          <input type="text" id="name" value={name} onChange={addName} />
+          <input
+            type="text"
+            id="name"
+            value={name}
+            onChange={(e) => setName(e.target.value)}
+          />
+        </label>
+        <label htmlFor="phone">
+          Phone
+          <input
+            type="text"
+            id="phone"
+            value={phone}
+            onChange={(e) => setPhone(e.target.value)}
+          />
         </label>
         <label htmlFor="email">
           Email
-          <input type="text" id="email" value={email} onChange={addEmail} />
+          <input
+            type="text"
+            id="email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+          />
+        </label>
+        <label htmlFor="image">
+          Image Url
+          <input
+            type="text"
+            id="image"
+            value={image}
+            onChange={(e) => setImage(e.target.value)}
+          />
         </label>
         <label htmlFor="password">
           Password
@@ -43,10 +82,11 @@ export default function CreateAccount() {
             placeholder=""
             id="password"
             value={password}
-            onChange={addPassword}
+            onChange={(e) => setPassword(e.target.value)}
           />
           <p className="password-minimum">(At least 6 characters)</p>
         </label>
+        {image && <img src={image} alt="user" />}
         <button type="submit" className="create-account-sign-in-btn">
           Create an account
         </button>
