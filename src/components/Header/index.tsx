@@ -16,6 +16,7 @@ export default function Header() {
 
   return (
     <div className="header-container">
+
       <div className="header-logo">
         <Link to="/">
           <FaShoppingCart size={40} style={{ color: "white" }} />
