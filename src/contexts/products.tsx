@@ -70,7 +70,7 @@ export default function ProductsContextProvider({
 
   useEffect(() => {
     if (favoriteProductIds.length) {
-      toast.info("A product was saved to your favorites");
+      toast.info("A product was saved to your wishlist");
     }
   }, [favoriteProductIds]);
 

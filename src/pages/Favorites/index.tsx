@@ -24,7 +24,7 @@ export default function WishList() {
 
   return (
     <div className="favorites-container">
-      <h1 className="favorites-title">Favorites</h1>
+      <h1 className="favorites-title">Wishlist</h1>
       <div className="products-container favorites">
         {favoriteProducts.map((product) => (
           <ProductCard product={product} isFavorite={true} />
