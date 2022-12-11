@@ -1,7 +1,9 @@
 # c.g.shop
 
-This app is an online cell phone store. 
-This project includes Bootstrap, TypeScript, the useContext React Hook
+              I learned a lot about promises and async await working on this
+              project. I used toastify for alerts. I also finally understood how
+              to work with state management using Context API. I added
+              TypeScript to it as well.
 
 ## How To Run This Project
 
