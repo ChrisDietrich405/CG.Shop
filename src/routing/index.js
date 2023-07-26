@@ -2,6 +2,7 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import { useContext } from "react";
 
 import Home from "../pages/Home";
+
 import Favorites from "../pages/Favorites";
 import CreateAccount from "../components/CreateAccount";
 import Login from "../components/Login";
@@ -18,6 +19,7 @@ export default function Routing() {
         <Switch>
           <Route path="/" exact component={Home}></Route>
           <Route path="/favorites" component={Favorites}></Route>
+         
           <Route path="/create-account" component={CreateAccount}></Route>
           <Route pat="/login" component={Login}></Route>
         </Switch>

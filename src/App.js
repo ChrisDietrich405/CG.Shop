@@ -13,6 +13,12 @@ function App() {
   return (
     <div>
       <Helmet>
+        <link
+          rel="icon"
+          type="image/png"
+          href="./assets/images/favicon.ico"
+          sizes="16x16"
+        />
         <meta charSet="utf-8" />
         <title>CG Shop</title>
         <meta name="CG Shop Title" content="Helmet application" />

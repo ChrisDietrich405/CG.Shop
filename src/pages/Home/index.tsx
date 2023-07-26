@@ -1,5 +1,5 @@
 import { useContext } from "react";
-
+import { Link } from "react-router-dom";
 import { ProductsContext } from "../../contexts/products";
 import ProductCard from "../../components/ProductCard";
 import { IProductsContext } from "../../contexts/products";
@@ -9,7 +9,8 @@ import "./styles.css";
 import LoadingImage from "../../assets/images/loading.svg";
 
 function Home() {
-  const { favoriteProductIds, products, loading } = useContext<IProductsContext>(ProductsContext);
+  const { favoriteProductIds, products, loading } =
+    useContext<IProductsContext>(ProductsContext);
   if (loading) {
     return (
       <div className="loading">
@@ -21,6 +22,7 @@ function Home() {
   return (
     <div className="home-container">
       <h1 className="home-title">Best Smartphones in Town</h1>
+
       <div className="products-container">
         {products.map((product, i) => {
           const isFavorite = favoriteProductIds.includes(product.id);

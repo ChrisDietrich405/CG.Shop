@@ -1,7 +1,7 @@
-import React, { createContext, useEffect, useState, ReactNode } from "react";
+import React, { createContext, useEffect, useState } from "react";
 import { toast } from "react-toastify";
+import axios from "axios";
 
-import * as fakeHttp from "../helpers/fakehttp";
 import { IProduct } from "../models/product";
 
 export interface IProductsContext {
@@ -25,13 +25,13 @@ export default function ProductsContextProvider({
   children,
 }: IProductsContextProvider) {
   const [products, setProducts] = useState<IProduct[]>([]);
+
   const [productsFiltered, setProductsFiltered] = useState<IProduct[]>([]);
   const [favoriteProductIds, setFavoriteProductIds] = useState<number[]>([]);
   const [headerSearchInput, setHeaderSearchInput] = useState<string>("");
   const [loading, setLoading] = useState<boolean>(false);
 
   function handleHeaderSearchInput(event: React.ChangeEvent<HTMLInputElement>) {
-    console.log(event);
     setHeaderSearchInput(event.target.value);
   }
 
@@ -55,8 +55,7 @@ export default function ProductsContextProvider({
     async function fetchProducts() {
       try {
         setLoading(true);
-        const response = await fakeHttp.getProducts();
-
+        const response = await axios.get("http://localhost:3001/api/phones");
         setProducts(response.data);
       } catch (err) {
         console.log(err);
@@ -74,17 +73,17 @@ export default function ProductsContextProvider({
     }
   }, [favoriteProductIds]);
 
+  const productsContextValue: IProductsContext = {
+    products: headerSearchInput !== "" ? productsFiltered : products,
+    favoriteProductIds,
+    saveFavoriteId,
+    removeFavoriteId,
+    handleHeaderSearchInput,
+    loading,
+  };
+
   return (
-    <ProductsContext.Provider
-      value={{
-        products: headerSearchInput !== "" ? productsFiltered : products,
-        favoriteProductIds,
-        saveFavoriteId,
-        removeFavoriteId,
-        handleHeaderSearchInput,
-        loading,
-      }}
-    >
+    <ProductsContext.Provider value={productsContextValue}>
       {children}
     </ProductsContext.Provider>
   );
