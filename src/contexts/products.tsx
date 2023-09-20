@@ -55,13 +55,17 @@ export default function ProductsContextProvider({
     async function fetchProducts() {
       try {
         setLoading(true);
-        const response = await axios.get("https://phones-vzxsrv7pza-uc.a.run.app");
+        const response = await axios.get(
+          "https://phones-vzxsrv7pza-uc.a.run.app"
+        );
         setProducts(response.data);
       } catch (err) {
         console.log(err);
         toast.error("Error");
       } finally {
-        setLoading(false);
+        setTimeout(() => {
+          setLoading(false); // Set loading to false after 3 seconds
+        }, 1000);
       }
     }
     fetchProducts();
