@@ -27,7 +27,7 @@ export default function CreateAccount() {
         password,
         image,
       };
-      await api.post("/uers", newUser);
+      await api.post("/users", newUser);
       toast.success("You're now added");
     } catch (err) {
       toast.error("Error while creating new user. Try again later");

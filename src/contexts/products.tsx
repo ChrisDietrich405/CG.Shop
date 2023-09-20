@@ -55,7 +55,7 @@ export default function ProductsContextProvider({
     async function fetchProducts() {
       try {
         setLoading(true);
-        const response = await axios.get("http://localhost:4000/phones");
+        const response = await axios.get("https://phones-vzxsrv7pza-uc.a.run.app");
         setProducts(response.data);
       } catch (err) {
         console.log(err);
