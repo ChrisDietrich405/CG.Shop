@@ -60,7 +60,7 @@ export default function ProductsContextProvider({
         );
         setProducts(response.data);
       } catch (err) {
-        console.log(err);
+       
         toast.error("Error");
       } finally {
         setTimeout(() => {
