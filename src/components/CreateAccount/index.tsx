@@ -5,7 +5,6 @@ import "react-toastify/dist/ReactToastify.css";
 import { api } from "../../services/api";
 
 import "../../assets/css/form.css";
-import { isJSDocNameReference } from "typescript";
 
 export default function CreateAccount() {
   const [name, setName] = useState<string>("");

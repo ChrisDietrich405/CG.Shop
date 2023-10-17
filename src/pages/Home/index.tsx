@@ -1,5 +1,4 @@
 import { useContext } from "react";
-import { Link } from "react-router-dom";
 import { ProductsContext } from "../../contexts/products";
 import ProductCard from "../../components/ProductCard";
 import { IProductsContext } from "../../contexts/products";

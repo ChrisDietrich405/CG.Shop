@@ -2,7 +2,6 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import { useContext } from "react";
 
 import Home from "../pages/Home";
-
 import Favorites from "../pages/Favorites";
 import CreateAccount from "../components/CreateAccount";
 import Login from "../components/Login";

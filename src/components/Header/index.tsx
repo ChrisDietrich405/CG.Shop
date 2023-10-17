@@ -4,9 +4,7 @@ import { IoCreateOutline } from "react-icons/io5";
 import { Link } from "react-router-dom";
 import { useContext } from "react";
 
-import { ProductsContext, IProductsContext } from "../../contexts/products";
 import { UserContext, IUserContext } from "../../contexts/users";
-
 import SearchInput from "../SearchInput";
 
 import "./styles.css";
