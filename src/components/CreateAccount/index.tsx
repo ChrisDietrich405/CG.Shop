@@ -1,6 +1,5 @@
 import { useState } from "react";
 import { toast } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
 
 import { api } from "../../services/api";
 
@@ -26,8 +25,10 @@ export default function CreateAccount() {
         password,
         image,
       };
-      await api.post("/users", newUser);
-      toast.success("You're now added");
+
+      await api.post("/cgshopbackend-f143a/us-central1/createclient", newUser);
+
+      toast.info("You're added");
     } catch (err) {
       toast.error("Error while creating new user. Try again later");
     }
@@ -65,7 +66,7 @@ export default function CreateAccount() {
             onChange={(e) => setEmail(e.target.value)}
           />
         </label>
-        <label htmlFor="image">
+        {/* <label htmlFor="image">
           Image Url
           <input
             type="text"
@@ -73,7 +74,7 @@ export default function CreateAccount() {
             value={image}
             onChange={(e) => setImage(e.target.value)}
           />
-        </label>
+        </label> */}
         <label htmlFor="password">
           Password
           <input

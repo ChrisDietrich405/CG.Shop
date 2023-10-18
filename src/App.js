@@ -24,10 +24,10 @@ function App() {
         <meta name="CG Shop Title" content="Helmet application" />
         <link rel="canonical" href="http://mysite.com/example" />
       </Helmet>
+      <ToastContainer position="top-right" />
       <DimensionProvider>
         <ProductsContextProvider>
           <UserProvider>
-            <ToastContainer position="bottom-right" />
             <Routing />
           </UserProvider>
         </ProductsContextProvider>

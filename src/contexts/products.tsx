@@ -1,7 +1,9 @@
+// "https://phones-vzxsrv7pza-uc.a.run.app"
+
 import React, { createContext, useEffect, useState } from "react";
 import { toast } from "react-toastify";
-import axios from "axios";
 
+import { api } from "../services/api";
 import { IProduct } from "../models/product";
 
 export interface IProductsContext {
@@ -55,16 +57,15 @@ export default function ProductsContextProvider({
     async function fetchProducts() {
       try {
         setLoading(true);
-        const response = await axios.get(
-          "https://phones-vzxsrv7pza-uc.a.run.app"
+        const response = await api.get(
+          "/cgshopbackend-f143a/us-central1/phones"
         );
         setProducts(response.data);
       } catch (err) {
-       
         toast.error("Error");
       } finally {
         setTimeout(() => {
-          setLoading(false); 
+          setLoading(false);
         }, 1000);
       }
     }
