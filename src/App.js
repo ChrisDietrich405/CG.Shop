@@ -8,6 +8,7 @@ import Routing from "./routing";
 
 import "react-toastify/dist/ReactToastify.css";
 import "./styles/global-styles.css";
+import { BrowserRouter as Router } from "react-router-dom";
 
 function App() {
   return (
@@ -25,13 +26,15 @@ function App() {
         <link rel="canonical" href="http://mysite.com/example" />
       </Helmet>
       <ToastContainer position="top-right" />
-      <DimensionProvider>
-        <ProductsContextProvider>
-          <UserProvider>
-            <Routing />
-          </UserProvider>
-        </ProductsContextProvider>
-      </DimensionProvider>
+      <Router>
+        <DimensionProvider>
+          <ProductsContextProvider>
+            <UserProvider>
+              <Routing />
+            </UserProvider>
+          </ProductsContextProvider>
+        </DimensionProvider>
+      </Router>
     </div>
   );
 }

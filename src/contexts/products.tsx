@@ -39,6 +39,7 @@ export default function ProductsContextProvider({
 
   function saveFavoriteId(productId: number) {
     setFavoriteProductIds([...favoriteProductIds, productId]);
+    console.log(favoriteProductIds, productId);
   }
 
   function removeFavoriteId(productId: number) {

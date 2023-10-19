@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import { Switch, Route } from "react-router-dom";
 import { useContext } from "react";
 
 import Home from "../pages/Home";
@@ -13,16 +13,15 @@ export default function Routing() {
   const { isMobile } = useContext(DimensionContext);
   return (
     <div className="routing">
-      <Router>
+  
         {isMobile ? <HeaderMobile /> : <Header />}
         <Switch>
           <Route path="/" exact component={Home}></Route>
-          <Route path="/favorites" component={Favorites}></Route>
-         
+          <Route path="/favorites" component={Favorites}></Route>         
           <Route path="/create-account" component={CreateAccount}></Route>
           <Route pat="/login" component={Login}></Route>
         </Switch>
-      </Router>
+
     </div>
   );
 }

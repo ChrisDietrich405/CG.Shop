@@ -10,11 +10,10 @@ import SearchInput from "../SearchInput";
 import "./styles.css";
 
 export default function Header() {
-  const { user, isAuthenticated } = useContext<IUserContext>(UserContext);
+  const { user, isUserLoggedIn } = useContext<IUserContext>(UserContext);
 
   return (
     <div className="header-container">
-
       <div className="header-logo">
         <Link to="/">
           <FaShoppingCart size={40} style={{ color: "white" }} />
@@ -30,10 +29,10 @@ export default function Header() {
 
         <Link to="/login">
           <CgProfile />
-          <span>{isAuthenticated ? user.name : "Log In"}</span>
+          <span>{isUserLoggedIn ? user.name : "Log In"}</span>
         </Link>
 
-        {!isAuthenticated && (
+        {!isUserLoggedIn && (
           <Link to="/create-account">
             <IoCreateOutline />
             <span>Create Account</span>

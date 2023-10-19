@@ -1,12 +1,13 @@
 import { createContext, useState, useEffect } from "react";
+import { useHistory } from "react-router-dom";
+
 import { IUser } from "../models/user";
 import { api } from "../services/api";
 import { toast } from "react-toastify";
-import { IoInformation } from "react-icons/io5";
 
 export interface IUserContext {
   user: IUser;
-  isAuthenticated: boolean;
+  isUserLoggedIn: boolean;
   handleLogin: (email: string, password: string) => void;
   handleLogout: () => void;
   loading: boolean;
@@ -19,60 +20,58 @@ interface IUsersContextProvider {
 export const UserContext = createContext<IUserContext>({} as IUserContext);
 
 export const UserProvider = ({ children }: IUsersContextProvider) => {
-  const [isAuthenticated, setIsAuthenticated] = useState<boolean>(false);
+  const [isUserLoggedIn, setIsUserLoggedIn] = useState<boolean>(false);
   const [user, setUser] = useState<IUser>({} as IUser);
   const [loading, setLoading] = useState<boolean>(false);
 
-  // const handleUserAuthentication = async (
-  //   username: string,
-  //   password: string
-  // ) => {
-  //   try {
-  //     const apiResponse = await api.get(`/users?${username}`);
-  //     if (
-  //       apiResponse.data.length > 0 &&
-  //       apiResponse.data[0].password === password
-  //     ) {
-  //       localStorage.setItem("data", JSON.stringify(apiResponse.data));
-  //       setIsAuthenticated(true);
-  //       setUser(apiResponse.data[0]);
-  //       return true;
-  //     }
-  //     return false;
-  //   } catch (error) {
-  //     return false;
-  //   }
-  // };
+  let history = useHistory();
 
-  const handleLogin = async (username: string, password: string) => {
+  const handleLogin = async (email: string, password: string) => {
     setLoading(true);
-    const response = await api.post("/cgshopbackend-f143a/us-central1/login", {
-      username,
-      password,
-    });
-    console.log(response);
+    try {
+      const response = await api.post(
+        "/cgshopbackend-f143a/us-central1/login",
+        {
+          email,
+          password,
+        }
+      );
+
+      toast.success("Succesfull login");
+
+      localStorage.setItem("account", JSON.stringify(response.data));
+      setIsUserLoggedIn(true);
+      history.push("/");
+    } catch (error) {
+      console.log(error);
+      toast.error("Unsuccessful login");
+    }
     setLoading(false);
   };
 
   const handleLogout = () => {
-    setIsAuthenticated(false);
-    localStorage.removeItem("data");
+    setIsUserLoggedIn(false);
+    localStorage.removeItem("account");
   };
 
   useEffect(() => {
-    const data = localStorage.getItem("data");
-    if (data) {
-      const parsedData = JSON.parse(data);
-      if (parsedData.length > 0) {
-        setIsAuthenticated(true);
-        setUser(parsedData[0]);
-      }
+    const account = localStorage.getItem("account");
+    if (account) {
+      const parsedData = JSON.parse(account);
+      setIsUserLoggedIn(true);
+      setUser(parsedData);
     }
   }, []);
 
   return (
     <UserContext.Provider
-      value={{ user, isAuthenticated, handleLogin, handleLogout, loading }}
+      value={{
+        user,
+        isUserLoggedIn,
+        handleLogin,
+        handleLogout,
+        loading,
+      }}
     >
       {children}
     </UserContext.Provider>

@@ -29,8 +29,12 @@ export default function CreateAccount() {
       await api.post("/cgshopbackend-f143a/us-central1/createclient", newUser);
 
       toast.info("You're added");
-    } catch (err) {
-      toast.error("Error while creating new user. Try again later");
+    } catch (error: any) {
+      let message = "Error while creating new user. Try again later";
+      if (error.response.data.message) {
+        message = error.response.data.message;
+      }
+      toast.error(message);
     }
   };
 
