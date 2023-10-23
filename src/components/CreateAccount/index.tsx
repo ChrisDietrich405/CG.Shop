@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useHistory } from "react-router-dom";
 import { toast } from "react-toastify";
 
 import { api } from "../../services/api";
@@ -11,6 +12,8 @@ export default function CreateAccount() {
   const [password, setPassword] = useState<string>("");
   const [phone, setPhone] = useState<string>("");
   const [image, setImage] = useState<string>("");
+
+  const history = useHistory();
 
   const submit = async (e: React.ChangeEvent<HTMLFormElement>) => {
     try {
@@ -29,6 +32,7 @@ export default function CreateAccount() {
       await api.post("/cgshopbackend-f143a/us-central1/createclient", newUser);
 
       toast.info("You're added");
+      history.push("/login");
     } catch (error: any) {
       let message = "Error while creating new user. Try again later";
       if (error.response.data.message) {
@@ -70,15 +74,6 @@ export default function CreateAccount() {
             onChange={(e) => setEmail(e.target.value)}
           />
         </label>
-        {/* <label htmlFor="image">
-          Image Url
-          <input
-            type="text"
-            id="image"
-            value={image}
-            onChange={(e) => setImage(e.target.value)}
-          />
-        </label> */}
         <label htmlFor="password">
           Password
           <input

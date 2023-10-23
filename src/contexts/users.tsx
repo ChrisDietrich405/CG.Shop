@@ -43,7 +43,6 @@ export const UserProvider = ({ children }: IUsersContextProvider) => {
       setIsUserLoggedIn(true);
       history.push("/");
     } catch (error) {
-      console.log(error);
       toast.error("Unsuccessful login");
     }
     setLoading(false);

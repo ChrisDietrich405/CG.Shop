@@ -2,7 +2,6 @@ import { useState, useContext } from "react";
 import { UserContext, IUserContext } from "../../contexts/users";
 
 import "../../assets/css/form.css";
-
 import "./styles.css";
 
 export default function Login() {
