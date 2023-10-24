@@ -10,7 +10,8 @@ import SearchInput from "../SearchInput";
 import "./styles.css";
 
 export default function Header() {
-  const { user, isUserLoggedIn } = useContext<IUserContext>(UserContext);
+  const { user, isUserLoggedIn, handleLogout } =
+    useContext<IUserContext>(UserContext);
 
   return (
     <div className="header-container">
@@ -27,10 +28,21 @@ export default function Header() {
           <span>Wishlist</span>
         </Link>
 
-        <Link to="/login">
-          <CgProfile />
-          <span>{isUserLoggedIn ? user.name : "Log In"}</span>
-        </Link>
+        {isUserLoggedIn ? (
+          <span>{user.name}</span> && (
+            <button
+              className="create-account-sign-in-btn"
+              onClick={handleLogout}
+            >
+              Log Out
+            </button>
+          )
+        ) : (
+          <Link to="/login">
+            <CgProfile />
+            <span>Log in</span>
+          </Link>
+        )}
 
         {!isUserLoggedIn && (
           <Link to="/create-account">

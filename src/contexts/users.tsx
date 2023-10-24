@@ -59,8 +59,9 @@ export const UserProvider = ({ children }: IUsersContextProvider) => {
       const parsedData = JSON.parse(account);
       setIsUserLoggedIn(true);
       setUser(parsedData);
+      console.log("hello");
     }
-  }, []);
+  }, [isUserLoggedIn]);
 
   return (
     <UserContext.Provider

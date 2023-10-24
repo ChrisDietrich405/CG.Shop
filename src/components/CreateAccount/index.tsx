@@ -18,9 +18,7 @@ export default function CreateAccount() {
   const submit = async (e: React.ChangeEvent<HTMLFormElement>) => {
     try {
       e.preventDefault();
-      if (password.length < 6) {
-        return toast.error("Password needs to be at least 6 characters");
-      }
+
       const newUser = {
         name,
         phone,
@@ -35,8 +33,9 @@ export default function CreateAccount() {
       history.push("/login");
     } catch (error: any) {
       let message = "Error while creating new user. Try again later";
-      if (error.response.data.message) {
-        message = error.response.data.message;
+
+      if (error.response.data) {
+        message = error.response.data;
       }
       toast.error(message);
     }
@@ -68,7 +67,7 @@ export default function CreateAccount() {
         <label htmlFor="email">
           Email
           <input
-            type="text"
+            type="email"
             id="email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
