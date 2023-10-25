@@ -34,7 +34,8 @@ export default function Header() {
               className="create-account-sign-in-btn"
               onClick={handleLogout}
             >
-              Log Out
+              <CgProfile />
+              <span>Log out</span>
             </button>
           )
         ) : (

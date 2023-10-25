@@ -33,9 +33,9 @@ export default function CreateAccount() {
       history.push("/login");
     } catch (error: any) {
       let message = "Error while creating new user. Try again later";
-
-      if (error.response.data) {
-        message = error.response.data;
+      console.log(error, error.response);
+      if (error.response.data.message) {
+        message = error.response.data.message;
       }
       toast.error(message);
     }
