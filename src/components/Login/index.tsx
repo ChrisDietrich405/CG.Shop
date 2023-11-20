@@ -66,7 +66,6 @@ export default function Login() {
             <label htmlFor="password">
               <div className="password-container">
                 <span className="password">Password</span>
-                <span className="forgot-password">Forgot Password?</span>
               </div>
 
               <input

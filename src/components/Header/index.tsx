@@ -30,12 +30,9 @@ export default function Header() {
 
         {isUserLoggedIn ? (
           <span>{user.name}</span> && (
-            <button
-              className="create-account-sign-in-btn"
-              onClick={handleLogout}
-            >
-              <CgProfile />
-              <span>Log out</span>
+            <button className="btn-container" onClick={handleLogout}>
+              <CgProfile style={{ color: "#fff" }} />
+              <span className="log-out-btn">Log out</span>
             </button>
           )
         ) : (

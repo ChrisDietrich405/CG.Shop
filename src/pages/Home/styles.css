@@ -1,6 +1,6 @@
 .home-title {
-  color: var(--font);
   margin: 3rem;
+  text-align: center;
 }
 
 .home-container {
@@ -66,14 +66,13 @@
   /* .products-container {
     flex-wrap: nowrap; 
   } */
-  
+
   .home-title {
     margin-top: 160px;
   }
 
   .product-card {
     width: 300px;
-  
   }
 }
 
@@ -84,6 +83,5 @@
 
   .product-card {
     width: 350px;
-   
   }
 }

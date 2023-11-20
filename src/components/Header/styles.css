@@ -1,58 +1,70 @@
 .header-container {
-    top: 0; 
-    position: fixed; 
-    width: 100%; 
-    height: 12vh;
-    background-color: var(--primary);
-    display: flex; 
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 2rem; 
-    z-index: 1; 
+  top: 0;
+  position: fixed;
+  width: 100%;
+  height: 12vh;
+  background-color: var(--primary);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 2rem;
+  z-index: 1;
 }
 
 .header-logo {
-    display: flex;
-    align-items: center; 
+  display: flex;
+  align-items: center;
 }
 
 .header-logo a {
-    transition: all .2s ease-in; 
+  transition: all 0.2s ease-in;
 }
 
 .header-logo a:hover {
-    transform: scale(1.2)
+  transform: scale(1.2);
 }
 
 .header-logo svg {
-    color: var(--secondary); 
-    margin-right: 1rem; 
+  color: var(--secondary);
+  margin-right: 1rem;
 }
 
 .header-logo span {
-    color: white; 
-    font-size: 1.5rem; 
-    font-weight: 1000; 
+  color: white;
+  font-size: 1.5rem;
+  font-weight: 1000;
 }
 
 .header-buttons {
-    display: flex;
-    align-items: center; 
-    color: white; 
+  display: flex;
+  align-items: center;
+  color: white;
 }
 
 .header-buttons span {
-    margin: 0 1rem 0 .4rem; 
+  margin: 0 1rem 0 0.4rem;
 }
 
 .header-buttons a {
-    display: flex; 
-    align-items: center; 
-    text-decoration: none; 
-    color: inherit;       
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: inherit;
 }
 
 .header-buttons svg {
-    font-size: 1.5rem; 
+  font-size: 1.5rem;
 }
 
+.btn-container {
+  display: flex;
+  align-items: center;
+  border: none;
+  background-color: var(--primary) !important;
+}
+
+.log-out-btn {
+  background-color: var(--primary) !important;
+  font-size: 16px;
+  color: #fff;
+}

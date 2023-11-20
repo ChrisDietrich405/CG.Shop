@@ -11,7 +11,6 @@ export default function CreateAccount() {
   const [email, setEmail] = useState<string>("");
   const [password, setPassword] = useState<string>("");
   const [phone, setPhone] = useState<string>("");
-  const [image, setImage] = useState<string>("");
 
   const history = useHistory();
 
@@ -24,7 +23,6 @@ export default function CreateAccount() {
         phone,
         email,
         password,
-        image,
       };
 
       await api.post("/cgshopbackend-f143a/us-central1/createclient", newUser);
@@ -84,7 +82,7 @@ export default function CreateAccount() {
           />
           <p className="password-minimum">(At least 6 characters)</p>
         </label>
-        {image && <img src={image} alt="user" />}
+
         <button type="submit" className="create-account-sign-in-btn">
           Create an account
         </button>
