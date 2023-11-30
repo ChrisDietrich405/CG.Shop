@@ -2,6 +2,7 @@
 
 import React, { createContext, useEffect, useState } from "react";
 import { toast } from "react-toastify";
+import axios from "axios"
 
 import { api } from "../services/api";
 import { IProduct } from "../models/product";
@@ -57,8 +58,8 @@ export default function ProductsContextProvider({
     async function fetchProducts() {
       try {
         setLoading(true);
-        const response = await api.get(
-          "/cgshopbackend-f143a/us-central1/phones"
+        const response = await axios.get(
+          "https://phones-vzxsrv7pza-uc.a.run.app"
         );
         setProducts(response.data);
       } catch (err) {
