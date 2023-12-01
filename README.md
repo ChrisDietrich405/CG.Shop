@@ -9,10 +9,9 @@
   <img src="https://img.shields.io/badge/NodeJS-green" alt="NodeJS">
 </div>
 
-I learned a lot about promises and async await working on this
-project. I used Toastify for alerts. I also finally understood how
-to work with state management using Context API. I added
-TypeScript to it as well.
+I built this practice commerce site to practice several technologies and concepts
+I learned how to work with state management using Context API. I added
+TypeScript to it as well. For the backend I used GCP's Firebase and Firestore to manage the data.
 
 ## How To Run This Project
 
