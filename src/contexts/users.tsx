@@ -1,8 +1,9 @@
 import { createContext, useState, useEffect } from "react";
 import { useHistory } from "react-router-dom";
+import axios from "axios";
 
 import { IUser } from "../models/user";
-import { api } from "../services/api";
+// import { api } from "../services/api";
 import { toast } from "react-toastify";
 
 export interface IUserContext {
@@ -29,13 +30,10 @@ export const UserProvider = ({ children }: IUsersContextProvider) => {
   const handleLogin = async (email: string, password: string) => {
     setLoading(true);
     try {
-      const response = await api.post(
-        "/cgshopbackend-f143a/us-central1/login",
-        {
-          email,
-          password,
-        }
-      );
+      const response = await axios.post(`${process.env.REACT_APP_LOGIN_URL}`, {
+        email,
+        password,
+      });
 
       toast.success("Succesfull login");
 

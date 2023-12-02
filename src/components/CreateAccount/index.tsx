@@ -2,9 +2,10 @@ import { useState } from "react";
 import { useHistory } from "react-router-dom";
 import { toast } from "react-toastify";
 
-import { api } from "../../services/api";
+// import { api } from "../../services/api";
 
 import "../../assets/css/form.css";
+import axios from "axios";
 
 export default function CreateAccount() {
   const [name, setName] = useState<string>("");
@@ -24,8 +25,10 @@ export default function CreateAccount() {
         email,
         password,
       };
+      console.log(process.env.REACT_APP_CREATE_USER_URL);
+      // await axios.post(`${process.env.CREATE_USER_URL}`, newUser);
+      await axios.post(`${process.env.REACT_APP_CREATE_USER_URL}`, newUser);
 
-      await api.post("/cgshopbackend-f143a/us-central1/createclient", newUser);
 
       toast.info("You're added");
       history.push("/login");

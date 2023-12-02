@@ -2,11 +2,10 @@
 
 import React, { createContext, useEffect, useState } from "react";
 import { toast } from "react-toastify";
-import axios from "axios"
+import axios from "axios";
 
 // import { api } from "../services/api";
 import { IProduct } from "../models/product";
-
 
 export interface IProductsContext {
   products: IProduct[];
@@ -59,9 +58,7 @@ export default function ProductsContextProvider({
     async function fetchProducts() {
       try {
         setLoading(true);
-        const response = await axios.get(
-          "https://phones-vzxsrv7pza-uc.a.run.app"
-        );
+        const response = await axios.get(`${process.env.REACT_APP_PHONES_URL}`);
         setProducts(response.data);
       } catch (err) {
         toast.error("Error");
@@ -95,4 +92,3 @@ export default function ProductsContextProvider({
     </ProductsContext.Provider>
   );
 }
-
