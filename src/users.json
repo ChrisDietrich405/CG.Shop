@@ -2,7 +2,7 @@
   "users": [
     {
       "id": 1,
-      "name": "Shoe  Dietrich",
+      "name": "Chris  Dietrich",
       "phone": "1 410 333 4444",
       "email": "chris@gmail.com",
       "password": "password",
@@ -15,22 +15,6 @@
       "email": "marcelo@gmail.com",
       "password": "anotherpassword",
       "image": "marcelo.jpg"
-    },
-    {
-      "name": "mar",
-      "phone": "333",
-      "email": "ekee",
-      "password": "dddd",
-      "image": "",
-      "id": 3
-    },
-    {
-      "name": "mar",
-      "phone": "333",
-      "email": "ekee",
-      "password": "dddd",
-      "image": "",
-      "id": 4
     },
     {
       "name": "mary",

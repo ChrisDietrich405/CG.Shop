@@ -15,11 +15,13 @@ TypeScript to it as well. For the backend I used GCP's Firebase and Firestore to
 
 ## How To Run This Project
 
-1. Clone project (in terminal add `git clone https://github.com/ChrisDietrich405/GC.Shop`)
-2. Install dependencies (in terminal run `npm install`)
-3. Run project (in terminal run `npm start`)
-4. In order to run the fake backend server, run the command `firebase emulators:start --only functions` on a second terminal
-5. In order to log in use the information from the `users.json` file which is inside the `src` folder 
+1. Install NodeJS version 16 or later
+2. Install Firebase cli https://firebase.google.com/docs/cli
+3. Clone project (in terminal add `git clone https://github.com/ChrisDietrich405/GC.Shop`)
+4. Install dependencies (in terminal run `npm install`)
+5. Run project (in terminal run `npm start`)
+6. In order to run the fake backend server, run the command `firebase emulators:start --only functions` on a second terminal
+7. In order to log in use the information from the `users.json` file which is inside the `src` folder 
 
 
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
