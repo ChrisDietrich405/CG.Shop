@@ -20,7 +20,7 @@ COPY package*.json ./
 #this copies my package.json file from my project onto the app directory
 
 
-
+RUN npm install
 
 
 #this runs npm install installing node modules into my container
