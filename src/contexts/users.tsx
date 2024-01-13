@@ -3,7 +3,6 @@ import { useHistory } from "react-router-dom";
 import axios from "axios";
 
 import { IUser } from "../models/user";
-// import { api } from "../services/api";
 import { toast } from "react-toastify";
 
 export interface IUserContext {

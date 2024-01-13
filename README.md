@@ -37,9 +37,7 @@ Home Page
 
 ![image](https://user-images.githubusercontent.com/70533870/132955522-c32a7d2a-b101-4c76-8502-7e3415edbe7b.png)
 
-WishList Page
 
-![image](https://user-images.githubusercontent.com/70533870/132955662-a5e038bd-86d6-4398-a3f5-e3c54e1fecd2.png)
 
 
 

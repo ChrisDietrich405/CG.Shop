@@ -1,10 +1,7 @@
-// "https://phones-vzxsrv7pza-uc.a.run.app"
-
 import React, { createContext, useEffect, useState } from "react";
 import { toast } from "react-toastify";
 import axios from "axios";
 
-// import { api } from "../services/api";
 import { IProduct } from "../models/product";
 
 export interface IProductsContext {
