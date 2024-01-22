@@ -1,0 +1,17 @@
+version: '3'  
+
+services:
+   frontend:
+     build:
+      context: .
+     ports:
+      - "3000:3000"
+     environment: 
+     - REACT_APP_CREATE_USER_URL=http://127.0.0.1:5001/cgshopbackend-f143a/us-central1/createclient
+     - REACT_APP_LOGIN_URL=http://127.0.0.1:5001/cgshopbackend-f143a/us-central1/login
+     - REACT_APP_PHONES_URL=http://127.0.0.1:5001/cgshopbackend-f143a/us-central1/phones
+     volumes: 
+     - ./:/app
+
+    
+   
