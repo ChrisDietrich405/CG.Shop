@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { FaShoppingCart, FaHeart } from "react-icons/fa";
 import { CgProfile, CgMenu } from "react-icons/cg";
 import { Link } from "react-router-dom";
